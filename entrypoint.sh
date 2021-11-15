@@ -7,9 +7,9 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-misspell -locale="${INPUT_LOCALE}" . \
+clj-kondo --lint  . \
   | reviewdog -efm="%f:%l:%c: %m" \
-      -name="linter-name (misspell)" \
+      -name="clj-kondo" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
       -filter-mode="${INPUT_FILTER_MODE}" \
       -fail-on-error="${INPUT_FAIL_ON_ERROR}" \
