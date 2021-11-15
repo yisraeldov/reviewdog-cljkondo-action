@@ -7,7 +7,7 @@ fi
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
-clj-kondo  . \
+clj-kondo --lint  . \
   | reviewdog -efm="%f:%l:%c: %m" \
       -name="linter-name (cljkondo)" \
       -reporter="${INPUT_REPORTER:-github-pr-check}" \
