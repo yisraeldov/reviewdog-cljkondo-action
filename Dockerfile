@@ -1,6 +1,6 @@
 FROM cljkondo/clj-kondo:2021.10.19
 
-ENV REVIEWDOG_VERSION=v0.13.0
+ENV REVIEWDOG_VERSION=v0.13.1
 
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
